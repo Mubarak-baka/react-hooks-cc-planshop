@@ -5,9 +5,9 @@ import PlantPage from "./PlantPage";
 function App() {
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    
     fetch("http://localhost:6001/plants")
       .then((response) => {
         if (!response.ok) {
@@ -16,24 +16,27 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        
         setPlants(data);
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
+      })
+      .finally(() => {
+        setLoading(false); 
       });
   }, []);
+
   const addPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
   };
 
   const markAsSoldOut = (name) => {
-  setPlants((prevPlants) =>
-    prevPlants.map((plant) =>
-      plant.name === name ? { ...plant, inStock: !plant.inStock } : plant
-    )
-  );
-};
+    setPlants((prevPlants) =>
+      prevPlants.map((plant) =>
+        plant.name === name ? { ...plant, inStock: !plant.inStock } : plant
+      )
+    );
+  };
 
   const filteredPlants = plants.filter((plant) =>
     plant.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -42,12 +45,18 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <PlantPage
-        plants={filteredPlants}
-        addPlant={addPlant}
-        markAsSoldOut={markAsSoldOut}
-        setSearchTerm={setSearchTerm}
-      />
+      {loading ? ( 
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      ) : (
+        <PlantPage
+          plants={filteredPlants}
+          addPlant={addPlant}
+          markAsSoldOut={markAsSoldOut}
+          setSearchTerm={setSearchTerm}
+        />
+      )}
     </div>
   );
 }
