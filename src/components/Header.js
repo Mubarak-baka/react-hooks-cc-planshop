@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <h1>
-        Plantsy
+        Plantsy App
         <span className="logo" role="img">
           🌱
         </span>
