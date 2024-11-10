@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    fetch("http://localhost:6001/plants")
+    fetch("https://react-hooks-cc-planshop-2.onrender.com/plants")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
