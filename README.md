@@ -4,9 +4,9 @@ A simple React app for managing a plant shop. This app allows users to view, add
 ## Setup
 To get started, clone the repository and install the dependencies:
 
-Clone the repo: 
+## Clone the repo:
 
-git clone <repository-url>
+git clone <https://github.com/Mubarak-baka/react-hooks-cc-planshop>
 
 ## Install dependencies:
 
