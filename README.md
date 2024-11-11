@@ -17,6 +17,12 @@ npm install
 npm start
 it will  run on http://localhost6001.
 
+## you can view this site on
+
+[https://vermillion-kheer-c06ba4.netlify.app/]
+
+the rendere link is for the db.json is [https://react-hooks-cc-planshop-2.onrender.com/plants]
+
 ## Usage
 View Plants: The app displays a list of plants with their name, price, image, and stock status.
 
@@ -48,3 +54,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+https://github.com/Mubarak-baka/react-hooks-cc-planshop/blob/master/license.md
