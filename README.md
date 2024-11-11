@@ -19,10 +19,14 @@ it will  run on http://localhost6001.
 
 ## Usage
 View Plants: The app displays a list of plants with their name, price, image, and stock status.
+
 Add Plants: You can add new plants via the New Plant form.
+
 Toggle Stock Status: Click "In Stock" or "Out of Stock" to toggle the stock status of each plant.
+
 Delete Plants: You can delete a plant from the list by clicking the "Delete Plant" button.
-Core Features
+
+## Core Features
 Search Functionality: Filter plants by name using the search bar.
 Stock Status Toggle: Toggle the stock status of plants from "In Stock" to "Out of Stock" and vice versa.
 
