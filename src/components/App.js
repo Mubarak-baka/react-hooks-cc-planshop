@@ -29,7 +29,9 @@ function App() {
         console.error("There was a problem please wait:", error);
         setError("OOPS! something went wrong."); // Set error message
       })
-     
+      .finally(function() {
+        setLoading(false); // End loading state
+      });
   }, []); 
 
   // Function to add a new plant to the list
@@ -53,20 +55,20 @@ function App() {
   const filteredPlants = plants.filter(function(plant) {
     return plant.name.toLowerCase().includes(searchTerm.toLowerCase()); // Case-insensitive search
   });
-// function for removing a plant from the list
+
   function removePlant(name) {
     setPlants(function(prevPlants) {
       return prevPlants.filter(function(plant) {
         return plant.name !== name;
       });
     });
-    toast.success("Plant deleted successfully!"); // success message when its deleed
+    toast.success("Plant deleted successfully!");
   }
 
   return (
     <div className="app">
-      <ToastContainer /> 
-      <Header /> 
+      <ToastContainer /> {/* Container for toast notifications */}
+      <Header /> {/* Render the header component */}
       {loading ? ( // Show loader while data is being fetched
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
@@ -75,12 +77,11 @@ function App() {
         <>
           {error && <div className="error-message">{error}</div>} {/* Display error message if there is one */}
           <PlantPage
-          // {functions being passed to the plantpage component}
-            plants={filteredPlants} 
-            addPlant={addPlant} 
-            markAsSoldOut={markAsSoldOut} 
+            plants={filteredPlants} // Pass filtered plants to PlantPage
+            addPlant={addPlant} // Pass addPlant function to PlantPage
+            markAsSoldOut={markAsSoldOut} // Pass markAsSoldOut function to PlantPage
             removePlant={removePlant}
-            setSearchTerm={setSearchTerm} 
+            setSearchTerm={setSearchTerm} // Pass setSearchTerm function to PlantPage
           />
         </>
       )}
@@ -88,4 +89,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App; // Export the App component for use in other parts of the application
